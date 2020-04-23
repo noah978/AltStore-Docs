@@ -12,7 +12,7 @@ So lets dive right in.
 
 # Creating the JSON file
 
-If you have never directly handled a JSON file, it stands for "JavaScript Object Notation" and you can learn more about if from the [official website](https://www.json.org/) and [documentation.](https://jsonapi.org/).
+If you have never directly handled a JSON file, it stands for "JavaScript Object Notation" and you can learn more about if from the [official website](https://www.json.org/) and [documentation.](https://jsonapi.org/)
 
 There are three basic properties that belong in the primary object, everything is required unless otherwise stated.
 ```
