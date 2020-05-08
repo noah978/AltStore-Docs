@@ -100,7 +100,7 @@ If you are planning on releasing your application in the future, after everyone 
 
 Using this format will create an automatic timer countdown to the release time specified. Please note that the time is automatically assumed to be UTC and uses a 24 hour clock.
 
-If you would rather use the time in your timezone, add ```-08:00``` to the end of the ```versionDate```, where that -08 corresponds to the number of hours difference between UTC and your timezone. It is also important to note that UTC does not change with daylight saving time, so be careful if you are releasing around that time of year.
+If you would rather use the time in your timezone, add ```-08:00``` to the end of the ```versionDate```, where that -08 corresponds to the number of hours difference between UTC and your timezone. It is also important to note that UTC does not change with daylight saving time, so be careful if you are releasing around that time of year as it can be easy to miscalculate.
 
 **versionDescription**
 
@@ -245,7 +245,9 @@ Note that the notification will not be instantaneous: it will occur whenever Alt
 ]
 ```
 
-This will allow you to set certain apps to only be available to your Patrons. Other capabilities like this will available to specify in the ```userInfo``` section in future.
+This will allow you to set certain apps to only be available to your Patrons. Other similar capabilities to this will available to specify in the ```userInfo``` section in future.
+
+---
 
 ```
 "versions": [
@@ -273,3 +275,5 @@ This allows you to list multiple versions of your application in the app store a
 # That's all there is!
 
 If you want to see the full JSON example file that was used throughout this tutorial, [here it is.](https://github.com/noah978/AltStore-Docs/blob/master/apps.json)
+
+My personal AltStore Sources can be found at the [Quark Sources website](https://quarksources.imfast.io) and I would highly recommend using this [AltStore Source Browser](https://altsource.by.lao.sb/browse/) to get a visual display of your Source outside of AltStore.
