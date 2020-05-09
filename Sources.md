@@ -270,6 +270,18 @@ This will allow you to set certain apps to only be available to your Patrons. Ot
 
 This allows you to list multiple versions of your application in the app store and keep a changelog of your app. Users on older iOS versions will still be able to use your app even after you switch to newer iOS versions.
 
+---
+
+```
+"screenshotURLs": [
+  "iphone-standard": "https://myapp.com/assets/screen0-standard.png",
+  "iphone-edgeToEdge": "https://myapp.com/assets/screen0-edgetoedge.png",
+  "ipad": "https://myapp.com/assets/screen0-ipad.png"
+],
+```
+
+This will allow you to specify the size of the images you are adding so that AltStore will display the correct screenshot sizes for the appropiate device.
+
 <!--Nothing new coming as of right now. Please reach out to the developer of AltStore using Twitter or the AltStore GitHub repository if there is a feature you'd like to have for your AltStore app listings.-->
 
 # That's all there is!
