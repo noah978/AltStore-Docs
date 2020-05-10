@@ -273,11 +273,17 @@ This allows you to list multiple versions of your application in the app store a
 ---
 
 ```
-"screenshotURLs": [
-  "iphone-standard": "https://myapp.com/assets/screen0-standard.png",
-  "iphone-edgeToEdge": "https://myapp.com/assets/screen0-edgetoedge.png",
-  "ipad": "https://myapp.com/assets/screen0-ipad.png"
-],
+"screenshotURLs": {
+  "iphone-standard": [
+    "https://myapp.com/assets/screen0-standard.png"
+  ],
+  "iphone-edgeToEdge": [
+    "https://myapp.com/assets/screen0-edgetoedge.png"
+  ],
+  "ipad": [
+    "https://myapp.com/assets/screen0-ipad.png"
+  ]
+},
 ```
 
 This will allow you to specify the size of the images you are adding so that AltStore will display the correct screenshot sizes for the appropiate device.
