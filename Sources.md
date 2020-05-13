@@ -217,7 +217,7 @@ This has the same function as the ```tintColor``` for app listings. The only dif
 
 **imageURL** *(optional)*
 
-This should be a direct link to any image you want to feature on your news item. Note that the recommended size for this image is 400x300 or any image with a 4:3 aspect ratio. Be careful not to put any important information in the corners since the AltStore rounds the images corners by default.
+This should be a direct link to any image you want to feature on your news item. Note that the recommended size for this image is 640x480 or any image with a 4:3 aspect ratio. Be careful not to put any important information in the corners since the AltStore rounds the images corners by default.
 
 **url** *(optional)*
 
