@@ -217,7 +217,7 @@ This has the same function as the ```tintColor``` for app listings. The only dif
 
 **imageURL** *(optional)*
 
-This should be a direct link to any image you want to feature on your news item. Note that the recommended size for this image is 400x300 or any image with a 4:3 aspect ratio. Be careful not to put any important information in the corners since the AltStore rounds the images corners by default.
+This should be a direct link to any image you want to feature on your news item. Note that the recommended size for this image is 640x480 or any image with a 4:3 aspect ratio. Be careful not to put any important information in the corners since the AltStore rounds the images corners by default.
 
 **url** *(optional)*
 
@@ -286,7 +286,19 @@ This allows you to list multiple versions of your application in the app store a
 },
 ```
 
-This will allow you to specify the size of the images you are adding so that AltStore will display the correct screenshot sizes for the appropiate device.
+This will allow you to specify the size of the images you are adding so that AltStore will display the correct screenshot sizes for the appropriate device.
+
+---
+
+```
+"category": "games",
+"subcategories": [
+  "action",
+  "platformer"
+],
+```
+
+The category and subcategories will allow you to specify which category fits your app best and what other subcategories are appropriate as well. The full list of categories that Apple uses for its App Store can be [found here.](https://www.idev101.com/code/Distribution/categories.html)
 
 <!--Nothing new coming as of right now. Please reach out to the developer of AltStore using Twitter or the AltStore GitHub repository if there is a feature you'd like to have for your AltStore app listings.-->
 
