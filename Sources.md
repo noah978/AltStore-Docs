@@ -237,7 +237,13 @@ When set to true, AltStore will send all users of the Source a notification with
 
 Note that the notification will not be instantaneous: it will occur whenever AltStore attempts a background refresh (the same time that update notifications occur) and it does require users to leave AltStore running in the background.
 
-# New features coming soon
+# New features on the horizon
+
+Not entirely sure what these will look like and they are not set in stone yet. But these should give you any idea of what future features AltStore Sources might have.
+
+---
+
+### Patreon support
 
 ```
 "userInfo": [
@@ -248,6 +254,8 @@ Note that the notification will not be instantaneous: it will occur whenever Alt
 This will allow you to set certain apps to only be available to your Patrons. Other similar capabilities to this will available to specify in the ```userInfo``` section in future.
 
 ---
+
+### Version history
 
 ```
 "versions": [
@@ -272,6 +280,8 @@ This allows you to list multiple versions of your application in the app store a
 
 ---
 
+### Multi-device screenshot support
+
 ```
 "screenshotURLs": {
   "iphone-standard": [
@@ -289,6 +299,8 @@ This allows you to list multiple versions of your application in the app store a
 This will allow you to specify the size of the images you are adding so that AltStore will display the correct screenshot sizes for the appropriate device.
 
 ---
+
+### App categorization
 
 ```
 "category": "games",
