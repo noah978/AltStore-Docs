@@ -246,9 +246,9 @@ Not entirely sure what these will look like and they are not set in stone yet. B
 ### Patreon support
 
 ```
-"userInfo": [
+"userInfo": {
   "patreonAcessToken": "afjbsafasfvsjdgfjhkouohjkledjyrqwfgse"
-]
+}
 ```
 
 This will allow you to set certain apps to only be available to your Patrons. Other similar capabilities to this will available to specify in the ```userInfo``` section in future.
