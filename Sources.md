@@ -84,7 +84,7 @@ This **must** be the same as your application's ```"CFBundleIdentifier"``` (loca
 
 Also self-explanatory, this is just the name of the developer/developers that will appear in the AltStore app listing.
 
-**subtitle**
+**subtitle** *(optional)*
 
 This should be a short description of your app that will appear in the browse tab of AltStore. It should give a quick one sentence explanation of your app and why a user wants it.
 
@@ -102,7 +102,7 @@ Using this format will create an automatic timer countdown to the release time s
 
 If you would rather use the time in your timezone, add ```-08:00``` to the end of the ```versionDate```, where that -08 corresponds to the number of hours difference between UTC and your timezone. It is also important to note that UTC does not change with daylight saving time, so be careful if you are releasing around that time of year as it can be easy to miscalculate.
 
-**versionDescription**
+**versionDescription** *(optional)*
 
 Use this to tell the user what new features you introduced or what bugs you squashed.
 
@@ -118,7 +118,7 @@ This is where you can include every feature and detail about your app. The user 
 
 This should point directly to wherever you host the icon for your app. Note that this doesn't have to be the same as the icon used for the actual application, but it is recommended to maintain consistency.
 
-**tintColor**
+**tintColor** *(optional)*
 
 This might take some experimentation, but the best tint color is usually choosing one of the darker colors represented in your app icon. The tint color will be used in two places:
 
@@ -211,7 +211,7 @@ This date should follow the same format as the ```versionDate``` for app listing
 
 Please note that the date does not currently display on any news items and neither does the time (if provided). Instead, it is required for AltStore to organize the news into chronological order.
 
-**tintColor**
+**tintColor** *(optional)*
 
 This has the same function as the ```tintColor``` for app listings. The only difference, is that now it will be used as the background color for your news item (and app listing if applicable).
 
