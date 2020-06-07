@@ -247,7 +247,7 @@ Not entirely sure what these will look like and they are not set in stone yet. B
 
 ```
 "userInfo": {
-  "patreonAcessToken": "afjbsafasfvsjdgfjhkouohjkledjyrqwfgse"
+  "patreonAccessToken": "afjbsafasfvsjdgfjhkouohjkledjyrqwfgse"
 }
 ```
 
