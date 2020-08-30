@@ -8,8 +8,6 @@ The current list of things you can do using URL Schemes is rather limited, but i
 
 ``altstore://install?url=[download url]``
 
-<!-- Not yet implemented
 ### Add an AltStore Source
 
-``altstore://addsource?url=[download url]``
--->
+``altstore://source?url=[source url]``
