@@ -173,6 +173,8 @@ This means that the following properties should be changed to reflect the update
 
 # Sending out news
 
+Please note that the "news" array is required to be a valid AltStore Source. You can choose to leave the section empty if you prefer.
+
 ```
 "news": [
   {
