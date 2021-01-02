@@ -320,4 +320,4 @@ The category and subcategories will allow you to specify which category fits you
 
 If you want to see the full JSON example file that was used throughout this tutorial, [here it is.](https://github.com/noah978/AltStore-Docs/blob/master/apps.json)
 
-My personal AltStore Sources can be found at the [Quark Sources website](https://quarksources.github.io) and I would highly recommend using this [AltStore Source Browser](https://altsource.by.lao.sb/browse/) to get a visual display of your Source outside of AltStore.
+Here are some good existing AltStore Sources: The [primary AltStore Source](https://apps.altstore.io), any of the Sources at [Quark Sources](https://quarksources.github.io), or the [DolphiniOS Source](https://altstore.oatmealdome.me/). I would highly recommend using this [AltStore Source Browser](https://altsource.by.lao.sb/browse/) to get a visual display of your Source outside of AltStore.
