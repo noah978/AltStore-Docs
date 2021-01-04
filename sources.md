@@ -16,7 +16,7 @@ If you have never directly handled a JSON file, it stands for "JavaScript Object
 
 There are three basic properties that belong in the primary object, everything is required unless otherwise stated.
 
-```text
+```json
 {
   "name": "My Source",
   "identifier": "com.myname.mysource",
@@ -39,7 +39,7 @@ If your user adds your Source using a URL shortener or you have the link to file
 
 ## Releasing apps
 
-```text
+```json
 "apps": [
   {
     "name": "My App",
@@ -72,13 +72,13 @@ If your user adds your Source using a URL shortener or you have the link to file
 
 **name**
 
-Rather self-explanatory, this is what the name of your appears as in the AltStore.
+Rather self-explanatory, this is the name of your app as it should appear in the AltStore.
 
 **bundleIdentifier**
 
 AltStore uses this to separate apps as individual listings.
 
-This **must** be the same as your application's `"CFBundleIdentifier"` \(located in `info.plist`\) in order for AltStore to be able to open the app after installation. Technically, it can be anything, but for all AltStore functionality to work, it should be the same as the application.
+This **must** be the same as your application's `"CFBundleIdentifier"` \(located in `info.plist`\) in order for AltStore to be able to open the app after installation. Technically, it can be any unique string, but for all AltStore functionality to work, it should be the same as the application.
 
 **developerName**
 
@@ -86,7 +86,7 @@ Also self-explanatory, this is just the name of the developer/developers that wi
 
 **subtitle** _\(optional\)_
 
-This should be a short description of your app that will appear in the browse tab of AltStore. It should give a quick one sentence explanation of your app and why a user wants it.
+This should be a very short description of your app that will appear in the browse tab of AltStore. It should give a quick one sentence explanation of your app and why a user wants it. The most effective subtitles tend to around 6-10 words long.
 
 **version**
 
@@ -104,15 +104,17 @@ If you would rather use the time in your timezone, add `-08:00` to the end of th
 
 **versionDescription** _\(optional\)_
 
-Use this to tell the user what new features you introduced or what bugs you squashed.
+Use this to tell the user what new features you introduced or what bugs you squashed with the latest version.
 
 **downloadURL**
 
 This should point directly to wherever your IPA is hosted.
 
+If you are planning on releasing your app in the future, this property is still required but it doesn't have to actually point to a valid file.
+
 **localizedDescription**
 
-This is where you can include every feature and detail about your app. The user will see the first 5 lines of text then can click "More" to expand to the full section. So you should think of the first couple sentences as a quick pitch for your app.
+This is where you can include every feature and detail about your app. The user will see the first 5 lines of text then they can click "More" to expand to the full section. So you should think of the first couple sentences as a quick pitch for your app.
 
 **iconURL**
 
@@ -124,6 +126,8 @@ This might take some experimentation, but the best tint color is usually choosin
 
 * For the install button
 * As a background color for the larger app listing bubble \(but this will be a lighter shade\)
+
+The tint color must be in the 6 character Hex format, with the '#' before the 6 characters as optional.
 
 **size**
 
@@ -137,15 +141,22 @@ This is to show the user what various permissions your app requires. Create an e
 * camera
 * location
 * contacts
+* reminders
 * music
 * microphone
 * speech-recognition
+* background-audio
+* background-fetch
 * bluetooth
+* network
 * calendars
 * faceid
 * siri
+* motion
 
 Your `usageDescription` should explain what the permission is and why your app needs it.
+
+It is _highly_ recommended to include these permissions if your app uses them as this disclosure provides additional trust with the user.
 
 **screenshotURLs** _\(optional\)_
 
@@ -155,9 +166,11 @@ These should point directly to any number of screenshots/images that display you
 
 Here you can specify whether apps should be classified as a beta application and receive a special beta tag on its app listing.
 
+Currently, this is also tied in with the Patreon app locking system used with AltStore/Delta betas. But it is not recommended to attempt to use it for this purpose since it will ultimately be changing in the future.
+
 ## Updating apps
 
-AltStore will automatically notify users about updates to your app and will prompt them to install the update.
+AltStore will automatically notify users about updates to your app and will prompt them to install the update. This occurs specifically when the version number listed in the Source is higher than the currently installed version number.
 
 This means that the following properties should be changed to reflect the updated app:
 
@@ -167,11 +180,13 @@ This means that the following properties should be changed to reflect the update
 * downloadURL
 * size
 
+And of course you can change any other property too if you would like to update the way your app appears in AltStore.
+
 ## Sending out news
 
 Please note that the "news" array is required to be a valid AltStore Source. You can choose to leave the section empty if you prefer.
 
-```text
+```json
 "news": [
   {
     "title": "My App Now Available!",
@@ -199,7 +214,7 @@ This **must** be a unique identifier that should not be used by any other news i
 
 **caption**
 
-Similar to the caption for your app listing, this should be about a sentence. While there is no technically limit to the caption size, no one wants a giant text blob in their news feed. If there is more to your news than a couple sentences can deliver, try using an image or link to a website.
+Similar to the caption for your app listing, this should be about a sentence. While there is technically no limit to the caption size, no one wants a giant text blob in their news feed. If there is more to your news than a couple sentences can deliver, try using an image or link to a website.
 
 **date**
 
@@ -209,11 +224,11 @@ Please note that the date does not currently display on any news items and neith
 
 **tintColor** _\(optional\)_
 
-This has the same function as the `tintColor` for app listings. The only difference, is that now it will be used as the background color for your news item \(and app listing if applicable\).
+This has the same function as the `tintColor` for app listings. The only difference is that now it will be used as the background color for your news item. Keep in mind that it does not apply to the app listing if you supplied an `appID`. The app listing that appears below the news article will use the `tintColor` specific to that app.
 
 **imageURL** _\(optional\)_
 
-This should be a direct link to any image you want to feature on your news item. Note that the recommended size for this image is 960x540 or any image with a 16:9 aspect ratio. AltStore will also take whatever image you provide it with, then crop and center it to the correct aspect ratio. Be careful not to put any important information in the corners since the AltStore rounds the images corners by default.
+This should be a direct link to any image you want to feature on your news item. The recommended size for this image is 960x540 or any image with a 16:9 aspect ratio. AltStore will also take whatever image you provide it with, then crop and center it to the correct aspect ratio. Be careful not to put any important information in the corners since the AltStore rounds the images corners by default.
 
 **url** _\(optional\)_
 
@@ -225,7 +240,7 @@ This **must** be an exact match to the `bundleIdentifier` of the app listing in 
 
 This is required if you want an app listing to appear below the news item for quick installation.
 
-It also makes it so that when a user click on the news item, it will take them to the specified app's page. This will be overridden if a `url` is specified.
+It also makes it so that when a user click on the news item, it will take them to the specified app's page. This will be overridden if a `url` is also specified.
 
 **notify** _\(optional\)_
 
@@ -239,7 +254,7 @@ Not entirely sure what these will look like and they are not set in stone yet. B
 
 ### Patreon support
 
-```text
+```json
 "userInfo": {
   "patreonAccessToken": "afjbsafasfvsjdgfjhkouohjkledjyrqwfgse"
 }
@@ -249,7 +264,7 @@ This will allow you to set certain apps to only be available to your Patrons. Ot
 
 ### Version history
 
-```text
+```json
 "versions": [
   {
     "version": "1.1",
@@ -268,11 +283,11 @@ This will allow you to set certain apps to only be available to your Patrons. Ot
 ]
 ```
 
-This allows you to list multiple versions of your application in the app store and keep a changelog of your app. Users on older iOS versions will still be able to use your app even after you switch to newer iOS versions.
+This allows you to list multiple versions of your application in the app store and keep a changelog of your app. Users on older iOS versions will still be able to use your app even if you switch to only supporting newer iOS versions.
 
 ### Multi-device screenshot support
 
-```text
+```json
 "screenshotURLs": {
   "iphone-standard": [
     "https://myapp.com/assets/screen0-standard.png"
@@ -286,11 +301,11 @@ This allows you to list multiple versions of your application in the app store a
 },
 ```
 
-This will allow you to specify the size of the images you are adding so that AltStore will display the correct screenshot sizes for the appropriate device.
+This will allow you to specify the size of the images you are adding so that AltStore will display the correct screenshot sizes for the appropriate device. This will likely become the new standard as AltStore continues to expand to more devices and fully supports the iPad layout.
 
 ### App categorization
 
-```text
+```json
 "category": "games",
 "subcategories": [
   "action",
@@ -298,7 +313,7 @@ This will allow you to specify the size of the images you are adding so that Alt
 ],
 ```
 
-The category and subcategories will allow you to specify which category fits your app best and what other subcategories are appropriate as well. The full list of categories that Apple uses for its App Store can be [found here.](https://www.idev101.com/code/Distribution/categories.html)
+The category and subcategories will allow you to specify which category fits your app best and what other subcategories are appropriate as well. The full list of categories that Apple uses for its App Store can be [found here.](https://www.idev101.com/code/Distribution/categories.html) Ultimately, the goal is to allow users to filter apps by what categories interest them.
 
 ## That's all there is!
 
