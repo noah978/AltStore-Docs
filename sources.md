@@ -184,7 +184,7 @@ And of course you can change any other property too if you would like to update 
 
 ## Sending out news
 
-Please note that the "news" array is required to be a valid AltStore Source. You can choose to leave the section empty if you prefer.
+Please note that the "news" array is not required to be a valid AltStore Source.
 
 ```json
 "news": [
