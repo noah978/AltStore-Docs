@@ -46,14 +46,25 @@ If your user adds your Source using a URL shortener or you have the link to file
     "bundleIdentifier": "com.myname.myapp",
     "developerName": "My Name",
     "subtitle": "The newest and greatest app around.",
-    "version": "1.0",
-    "versionDate": "2020-04-21",
-    "versionDescription": "Squashed some bugs, made some new bugs.",
-    "downloadURL": "https://myapp.com/app.ipa",
+    "versions": [
+      {
+        "version": "1.1",
+        "date": "2020-04-21",
+        "localizedDescription": "Bug fixes.",
+        "downloadURL": "https://myapp.com/myapp-1.1.ipa",
+        "size": 87129
+      },
+      {
+        "version": "1.0",
+        "date": "2020-03-30",
+        "localizedDescription": "First AltStore release!",
+        "downloadURL": "https://myapp.com/myapp-1.0.ipa",
+        "size": 79821
+      }
+    ],
     "localizedDescription": "Features include:\n\n• Cool graphics\n• Top notch performance\n• Satisfying interactions",
     "iconURL": "https://myapp.com/assets/icon.png",
     "tintColor": "8A28F7",
-    "size": 857669,
     "permissions": [
       {
         "type": "photos",
@@ -87,30 +98,6 @@ Also self-explanatory, this is just the name of the developer/developers that wi
 **subtitle** _\(optional\)_
 
 This should be a very short description of your app that will appear in the browse tab of AltStore. It should give a quick one sentence explanation of your app and why a user wants it. The most effective subtitles tend to around 6-10 words long.
-
-**version**
-
-The latest version of your application. This **must** match your application's `"CFBundleShortVersionString"` \(located in `info.plist`\) in order for AltStore updates to work properly. More on this later in the **Updating apps** section.
-
-**versionDate**
-
-This should be the date that you are releasing your application, and should be written in the format `YYYY-MM-DD`.
-
-If you are planning on releasing your application in the future, after everyone has installed your Source, there is an additional format available: `YYYY-MM-DDTHH:MM:SS`
-
-Using this format will create an automatic timer countdown to the release time specified. Please note that the time is automatically assumed to be UTC and uses a 24 hour clock.
-
-If you would rather use the time in your timezone, add `-08:00` to the end of the `versionDate`, where that -08 corresponds to the number of hours difference between UTC and your timezone. It is also important to note that UTC does not change with daylight saving time, so be careful if you are releasing around that time of year as it can be easy to miscalculate.
-
-**versionDescription** _\(optional\)_
-
-Use this to tell the user what new features you introduced or what bugs you squashed with the latest version.
-
-**downloadURL**
-
-This should point directly to wherever your IPA is hosted.
-
-If you are planning on releasing your app in the future, this property is still required but it doesn't have to actually point to a valid file.
 
 **localizedDescription**
 
@@ -168,11 +155,53 @@ Here you can specify whether apps should be classified as a beta application and
 
 Currently, this is also tied in with the Patreon app locking system used with AltStore/Delta betas. But it is not recommended to attempt to use it for this purpose since it will ultimately be changing in the future.
 
+### **versions**
+
+A list containing the version(s) of your application. *New with AltSource v2.0 API.*
+
+AltStore will currently just display the first version in the list as the "latest" release, regardless of version or date.
+
+**version**
+
+This **must** match your application's `"CFBundleShortVersionString"` \(located in `info.plist`\) in order for AltStore updates to work properly. More on this later in the **Updating apps** section.
+
+**versionDate**
+
+This should be the date that you are releasing your application, and should be written in the format `YYYY-MM-DD`.
+
+If you are planning on releasing your application in the future, after everyone has installed your Source, there is an additional format available: `YYYY-MM-DDTHH:MM:SS`
+
+Using this format will create an automatic timer countdown to the release time specified. Please note that the time is automatically assumed to be UTC and uses a 24 hour clock.
+
+If you would rather use the time in your timezone, add `-08:00` to the end of the `versionDate`, where that -08 corresponds to the number of hours difference between UTC and your timezone. It is also important to note that UTC does not change with daylight saving time, so be careful if you are releasing around that time of year as it can be easy to miscalculate.
+
+**localizedDescription** _\(optional\)_
+
+Use this to tell the user what new features you introduced or what bugs you squashed with the latest version.
+
+**downloadURL**
+
+This should point directly to wherever your IPA is hosted.
+
+If you are planning on releasing your app in the future, this property is still required but it doesn't have to actually point to a valid file.
+
 ## Updating apps
 
 AltStore will automatically notify users about updates to your app and will prompt them to install the update. This occurs specifically when the version number listed in the Source is higher than the currently installed version number.
 
-This means that the following properties should be changed to reflect the updated app:
+The AltStore team recommends that you simply create another object in the `versions` list with the following properties changed to reflect the updated app:
+
+* version
+* date
+* localizedDescription _\(optional\)_
+* downloadURL
+* size
+
+And of course you can change any other property outside of the `versions` list if you would like to update the way your app appears in AltStore.
+
+### Deprecated versions API
+
+The following properties are still usable with the v1.0 API as properties of an app object.
 
 * version
 * versionDate
@@ -180,7 +209,7 @@ This means that the following properties should be changed to reflect the update
 * downloadURL
 * size
 
-And of course you can change any other property too if you would like to update the way your app appears in AltStore.
+If there is not a `versions` list in the AltSource app, these properties will be required instead and used by AltStore to display the release information.
 
 ## Sending out news
 
@@ -261,29 +290,6 @@ Not entirely sure what these will look like and they are not set in stone yet. B
 ```
 
 This will allow you to set certain apps to only be available to your Patrons. Other similar capabilities to this will available to specify in the `userInfo` section in future.
-
-### Version history
-
-```json
-"versions": [
-  {
-    "version": "1.1",
-    "versionDate": "2020-04-21",
-    "versionDescription": "Bug fixes.",
-    "downloadURL": "https://myapp.com/myapp-1.1.ipa",
-    "size": 87129
-  },
-  {
-    "version": "1.0",
-    "versionDate": "2020-03-30",
-    "versionDescription": "First AltStore release!",
-    "downloadURL": "https://myapp.com/myapp-1.0.ipa",
-    "size": 79821
-  }
-]
-```
-
-This allows you to list multiple versions of your application in the app store and keep a changelog of your app. Users on older iOS versions will still be able to use your app even if you switch to only supporting newer iOS versions.
 
 ### Multi-device screenshot support
 
