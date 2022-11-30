@@ -157,6 +157,16 @@ Currently, this is also tied in with the Patreon app locking system used with Al
 
 ### **versions**
 
+```json
+{
+  "version": "1.0",
+  "date": "2020-03-30",
+  "localizedDescription": "First AltStore release!",
+  "downloadURL": "https://myapp.com/myapp-1.0.ipa",
+  "size": 79821
+}
+```
+
 A list containing the version(s) of your application. *New with AltSource v2.0 API.*
 
 AltStore will currently just display the first version in the list as the "latest" release, regardless of version or date.
@@ -167,7 +177,7 @@ This **must** match your application's `"CFBundleShortVersionString"` \(located 
 
 **versionDate**
 
-This should be the date that you are releasing your application, and should be written in the format `YYYY-MM-DD`.
+This should be the date that you are releasing your application, and should be written in the format `YYYY-MM-DD` (other formats standard formats will work as well, but this is the only info required and shown to the user).
 
 If you are planning on releasing your application in the future, after everyone has installed your Source, there is an additional format available: `YYYY-MM-DDTHH:MM:SS`
 

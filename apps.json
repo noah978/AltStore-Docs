@@ -8,14 +8,26 @@
       "bundleIdentifier": "com.myname.myapp",
       "developerName": "My Name",
       "subtitle": "The newest and greatest app around.",
-      "version": "1.0",
-      "versionDate": "2020-04-21",
-      "versionDescription": "Squashed some bugs, made some new bugs.",
+      "versions": [
+        {
+          "version": "1.1",
+          "date": "2020-04-21",
+          "localizedDescription": "Bug fixes.",
+          "downloadURL": "https://myapp.com/myapp-1.1.ipa",
+          "size": 87129
+        },
+        {
+          "version": "1.0",
+          "date": "2020-03-30",
+          "localizedDescription": "First AltStore release!",
+          "downloadURL": "https://myapp.com/myapp-1.0.ipa",
+          "size": 79821
+        }
+      ],
       "downloadURL": "https://myapp.com/app.ipa",
       "localizedDescription": "Features include:\n\n• Cool graphics\n• Top notch performance\n• Satisfying interactions",
       "iconURL": "https://myapp.com/assets/icon.png",
       "tintColor": "8A28F7",
-      "size": 857669,
       "permissions": [
         {
           "type": "photos",
