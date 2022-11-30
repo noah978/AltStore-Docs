@@ -301,6 +301,8 @@ Not entirely sure what these will look like and they are not set in stone yet. B
 
 This will allow you to set certain apps to only be available to your Patrons. Other similar capabilities to this will available to specify in the `userInfo` section in future.
 
+⚠ Warning: This is currently implemented in AltStore so that if a patreonAccessToken is provided, any apps with the ``"beta": true`` property will be hidden from users and no longer update/refresh unless the linked Patreon account in AltStore settings is subscribed to the account the token is associated with.
+
 ### Multi-device screenshot support
 
 ```json
