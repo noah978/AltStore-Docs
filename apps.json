@@ -14,14 +14,17 @@
           "date": "2020-04-21",
           "localizedDescription": "Bug fixes.",
           "downloadURL": "https://myapp.com/myapp-1.1.ipa",
-          "size": 87129
+          "size": 87129,
+          "minOSVersion": "15.0"
         },
         {
           "version": "1.0",
           "date": "2020-03-30",
           "localizedDescription": "First AltStore release!",
           "downloadURL": "https://myapp.com/myapp-1.0.ipa",
-          "size": 79821
+          "size": 79821,
+          "minOSVersion": "12.0",
+          "maxOSVersion": "14.3"
         }
       ],
       "downloadURL": "https://myapp.com/app.ipa",

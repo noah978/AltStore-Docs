@@ -163,13 +163,15 @@ Currently, this is also tied in with the Patreon app locking system used with Al
   "date": "2020-03-30",
   "localizedDescription": "First AltStore release!",
   "downloadURL": "https://myapp.com/myapp-1.0.ipa",
-  "size": 79821
+  "size": 79821,
+  "minOSVersion": "12.0",
+  "maxOSVersion": "14.3"
 }
 ```
 
 A list containing the version(s) of your application. *New with AltSource v2.0 API.*
 
-AltStore will currently just display the first version in the list as the "latest" release, regardless of version or date.
+Important note: AltStore will display the first version (with compatible min/max iOS versions) in the list as the "latest" release, regardless of version or date. So keep in mind that the order that versions appear **must** be in reverse chronological order.
 
 **version**
 
@@ -195,6 +197,10 @@ This should point directly to wherever your IPA is hosted.
 
 If you are planning on releasing your app in the future, this property is still required but it doesn't have to actually point to a valid file.
 
+**minOSVersion** and **maxOSVersion** _\(optional\)_
+
+These are used to indicate the iOS version restrictions that your app may have (**inclusively**). It also allows you to support multiple different versions of your app that can support different iOS version ranges.
+
 ## Updating apps
 
 AltStore will automatically notify users about updates to your app and will prompt them to install the update. This occurs specifically when the version number listed in the Source is higher than the currently installed version number.
@@ -211,7 +217,7 @@ And of course you can change any other property outside of the `versions` list i
 
 ### Deprecated versions API
 
-The following properties are still usable with the v1.0 API as properties of an app object.
+The following properties are still usable with the v1.0 API as properties of an app object, but are deprecated and subject to discontinuation as soon as March 2023.
 
 * version
 * versionDate
