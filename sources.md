@@ -215,17 +215,17 @@ The AltStore team recommends that you simply create another object in the `versi
 
 And of course you can change any other property outside of the `versions` list if you would like to update the way your app appears in AltStore.
 
-### Deprecated versions API
-
-The following properties are still usable with the v1.0 API as properties of an app object, but are deprecated and subject to discontinuation as soon as March 2023.
-
-* version
-* versionDate
-* versionDescription
-* downloadURL
-* size
-
-If there is not a `versions` list in the AltSource app, these properties will be required instead and used by AltStore to display the release information.
+> #### Deprecated versions API
+>
+> The following properties are still usable with the v1.0 API as properties of an app object, but are deprecated and subject to discontinuation as soon as March 2023.
+>
+> * version
+> * versionDate
+> * versionDescription
+> * downloadURL
+> * size
+> 
+> If there is not a `versions` list in the AltSource app, these properties will be required instead and used by AltStore to display the release information.
 
 ## Sending out news
 
