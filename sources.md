@@ -299,15 +299,27 @@ Not entirely sure what these will look like and they are not set in stone yet. B
 
 ### Patreon support
 
+Included at the root of the AltSource:
 ```json
 "userInfo": {
   "patreonAccessToken": "afjbsafasfvsjdgfjhkouohjkledjyrqwfgse"
 }
 ```
 
+Included within any app that is to be Patreon locked:
+```json
+{
+  ...
+  "name": "Example App",
+  "patreon": true,
+  ...
+}
+```
+
+
 This will allow you to set certain apps to only be available to your Patrons. Other similar capabilities to this will available to specify in the `userInfo` section in future.
 
-⚠ Warning: This is currently implemented in AltStore so that if a patreonAccessToken is provided, any apps with the ``"beta": true`` property will be hidden from users and no longer update/refresh unless the linked Patreon account in AltStore settings is subscribed to the account the token is associated with.
+**⚠ Warning**: This is currently implemented in AltStore so that if a patreonAccessToken is provided, any apps with the ``"beta": true`` property will be hidden from users and no longer update/refresh unless the linked Patreon account in AltStore settings is subscribed to the account the token is associated with.
 
 ### Multi-device screenshot support
 
@@ -330,14 +342,28 @@ This will allow you to specify the size of the images you are adding so that Alt
 ### App categorization
 
 ```json
-"category": "games",
-"subcategories": [
+"primaryCategory": "games",
+"secondaryCategory": "lifestyle",
+"primarySubcategories": [
   "action",
   "platformer"
 ],
+"secondarySubcategories": [],
 ```
 
-The category and subcategories will allow you to specify which category fits your app best and what other subcategories are appropriate as well. The full list of categories that Apple uses for its App Store can be [found here.](https://www.idev101.com/code/Distribution/categories.html) Ultimately, the goal is to allow users to filter apps by what categories interest them.
+The primaryCategory and primarySubcategories will allow you to specify which category fits your app best and what other subcategories are appropriate as well (the same applies to the secondaryCategory). The full list of categories that Apple uses for its App Store can be [found here.](https://docs.fastlane.tools/actions/deliver/#reference) Ultimately, the goal is to allow users to filter apps by what categories interest them.
+
+### Per App Age Rating / Content Warnings
+
+```json
+"age_rating": "seventeenPlus",
+"contentWarnings": [
+  "violenceCartoonOrFantasy",
+  "sexualContentOrNudity",
+  "substanceUse"
+]
+```
+These can be useful for safe-guarding certain apps from users under the suggested age rating by filtering these apps according to the settings contained within AltStore.
 
 ## That's all there is!
 
