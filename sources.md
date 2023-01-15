@@ -217,7 +217,11 @@ And of course you can change any other property outside of the `versions` list i
 
 ### Deprecated versions API
 
-The following properties are still usable with the v1.0 API as properties of an app object, but are deprecated and subject to discontinuation as soon as March 2023.
+{% hint style="danger" %}
+**IMPORTANT!** All the deprecated properties (excluding `versionDescription`) are still **required** for AltSources to be valid on both Beta and Stable versions of AltStore.
+{% endhint %}
+
+The following properties are still usable with the v1.0 API as properties of an app object, but are deprecated and subject to discontinuation as soon as March 2023 (final date to be announced).
 
 * version
 * versionDate
